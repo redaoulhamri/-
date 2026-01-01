@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reda Oulhamri- Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes gradient { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+        .animate-gradient { background-size: 200% 200%; animation: gradient 3s ease infinite; }
+        @keyframes ping { 75%, 100% { transform: scale(2); opacity: 0; } }
+        .animate-ping { animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite; }
+        html { scroll-behavior: smooth; }
+        .station-marker::before { content: ''; position: absolute; inset: 0; border-radius: 50%; background: inherit; animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
+    
+    <div class="fixed top-0 left-0 w-full h-1 bg-gray-800 z-50">
+        <div id="progress-bar" class="h-full bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500" style="width: 0%"></div>
+    </div>
+
+    <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute w-96 h-96 bg-purple-500 rounded-full blur-3xl opacity-20 -top-48 -left-48 animate-pulse"></div>
+        <div class="absolute w-96 h-96 bg-cyan-500 rounded-full blur-3xl opacity-20 -bottom-48 -right-48 animate-pulse"></div>
+        
+        <div class="text-center z-10 px-4">
+            <!--<div class="w-64 h-64 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-full mx-auto mb-6 animate-pulse"></div>-->
+            <img src="pic.jpeg" alt="Your Name" class="w-64 h-64 rounded-full mx-auto mb-6 object-cover border-6 border-purple-500 shadow-2xl shadow-purple-500/50">
+            <h1 class="text-6xl md:text-8xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 animate-gradient">Reda Oulhamri</h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8">Interdisciplinary Computer Science Researcher</p>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-12">Interdisciplinary CS researcher bridging AI, cybersecurity, robotics, and network systems. I don't just specialize—I synthesize. By understanding how domains interconnect, I architect solutions that others miss. Innovation happens where disciplines collide, and that's exactly where I thrive.</p>
+            <button onclick="document.getElementById('journey').scrollIntoView({behavior:'smooth'})" class="animate-bounce">
+                <svg class="w-12 h-12 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+        </div>
+    </section>
+
+    <section id="journey" class="min-h-screen py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">My Educational Journey</h2>
+            <p class="text-center text-gray-400 mb-20">The path that shaped my skills</p>
+            <div class="relative">
+                <div class="absolute left-1/2 -translate-x-1/2 w-1 h-full bg-gradient-to-b from-cyan-500 via-purple-500 to-pink-500"></div>
+                <div id="education-container"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="min-h-screen py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">Featured Projects</h2>
+            <p class="text-center text-gray-400 mb-20">Building solutions, one project at a time</p>
+            <div class="relative">
+                <div class="absolute left-1/2 -translate-x-1/2 w-1 h-full bg-gradient-to-b from-pink-500 via-orange-500 to-yellow-500"></div>
+                <div id="projects-container"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="min-h-screen flex items-center justify-center py-20 px-4">
+        <div class="max-w-4xl w-full text-center">
+            <h2 class="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-pink-400">Let's Connect</h2>
+            <p class="text-xl text-gray-400 mb-12">Feel free to reach out for collaborations or just a friendly hello</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
+                <a href="https://github.com/redaoulhamri" class="group p-6 bg-slate-800/50 rounded-xl border border-slate-700 hover:border-purple-500 hover:scale-110 transition-all">
+                    <svg class="w-12 h-12 mx-auto mb-2 text-gray-400 group-hover:text-purple-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <span class="text-sm">GitHub</span>
+                </a>
+                <a href="mailto:redaoulhamri@gmail.com" class="group p-6 bg-slate-800/50 rounded-xl border border-slate-700 hover:border-pink-500 hover:scale-110 transition-all">
+                    <svg class="w-12 h-12 mx-auto mb-2 text-gray-400 group-hover:text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    <span class="text-sm">Email</span>
+                </a>
+                <a href="https://youtube.com/@redaoulhamri" class="group p-6 bg-slate-800/50 rounded-xl border border-slate-700 hover:border-red-500 hover:scale-110 transition-all">
+                    <svg class="w-12 h-12 mx-auto mb-2 text-gray-400 group-hover:text-red-400" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span class="text-sm">YouTube</span>
+                </a>
+                <a href="https://instagram.com/" class="group p-6 bg-slate-800/50 rounded-xl border border-slate-700 hover:border-orange-500 hover:scale-110 transition-all">
+                    <svg class="w-12 h-12 mx-auto mb-2 text-gray-400 group-hover:text-orange-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    <span class="text-sm">Instagram</span>
+                </a>
+            </div>
+            <p class="mt-12 text-gray-500">© 2025 Reda Oulhamri</p>
+        </div>
+    </section>
+
+    <script>
+        // ============================================
+        // 🎨 COLOR PALETTE - 8 Vibrant Colors
+        // ============================================
+        const colors = [
+            'from-blue-500 to-cyan-500',
+            'from-purple-500 to-pink-500',
+            'from-green-500 to-emerald-500',
+            'from-orange-500 to-red-500',
+            'from-indigo-500 to-purple-500',
+            'from-teal-500 to-green-500',
+            'from-pink-500 to-fuchsia-500',
+            'from-yellow-400 to-orange-500'
+        ];
+
+        // ============================================
+        // 📚 EDUCATION DATA - EDIT HERE!
+        // ============================================
+        const educationData = [
+            {
+                period: "2024 - 2027",
+                degree: "Bachelor's Degree in Computer Science Education (in progress)",
+                institution: "ENS",
+                location: "Meknes, Morocco",
+                description: "A degree that merges computer science with education, building future computer science teachers through teaching didactics, pedagogical training, and technology integration."
+            },
+            {
+                period: "2025",
+                degree: "basics of python",
+                institution: "hackerrank",
+                location: "hackerrank.com",
+                description: "Specialized in python"
+            },
+            {
+                period: "2024",
+                degree: "python developper",
+                institution: "sololearn",
+                location: "sololearn.com",
+                description: "Specialized in python language"
+            },
+            {
+                period: "2023 - 2024",
+                degree: "High School Diploma : Baccalauréat",
+                institution: "",
+                location: "Fes, Morocco",
+                description: "Mathematical Sciences Track"
+            },
+        ];
+
+        // ============================================
+        // 💼 PROJECTS DATA - EDIT HERE!
+        // ============================================
+        const projectsData = [
+            {
+                title: "GUI Management Applications",
+                description: "Python GUI Applications : i created integrated management systems for companies to replace traditional paperwork,i Digitized client workflows",
+                tech: ["Python", "Tk", "CTk", "Opencv","Flask","Matplotlib"],
+                link: "#"
+            },
+            {
+                title: "Website backend",
+                description: "Built the server-side logic, database models, and an API for a community club website, supporting user roles, event management, and content updates.",
+                tech: ["Python", "Flask", "SQLAlchemy"],
+                link: "#"
+            }
+        ];
+
+        // ============================================
+        // 🏗️ FUNCTION: Generate Education Station
+        // ============================================
+        function generateEducationStation(edu, index) {
+            const isLeft = index % 2 === 0;
+            const colorGradient = colors[index % colors.length];
+            
+            return `
+                <div class="relative mb-20 ${isLeft ? 'md:w-1/2 md:pr-12' : 'md:w-1/2 md:ml-auto md:pl-12'}">
+                    <div class="group bg-slate-800/50 rounded-2xl p-6 border border-slate-700 hover:border-purple-500 transition-all hover:scale-105">
+                        <div class="station-marker absolute ${isLeft ? '-right-6 md:-right-14' : '-left-6 md:-left-14'} top-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-br ${colorGradient} rounded-full border-4 border-slate-900 z-10"></div>
+                        
+                        <div class="text-sm text-gray-400 mb-2">${edu.period}</div>
+                        <h3 class="text-2xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r ${colorGradient}">${edu.degree}</h3>
+                        <p class="text-purple-300 font-semibold mb-2">${edu.institution}</p>
+                        <p class="text-gray-400 mb-2">${edu.location}</p>
+                        <p class="text-gray-300">${edu.description}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ============================================
+        // 🏗️ FUNCTION: Generate Project Station
+        // ============================================
+        function generateProjectStation(project, index) {
+            const isLeft = index % 2 === 0;
+            const colorGradient = colors[index % colors.length];
+            
+            const techTags = project.tech.map(tech => 
+                `<span class="px-3 py-1 bg-slate-700/50 rounded-full text-sm text-cyan-300 border border-slate-600">${tech}</span>`
+            ).join('');
+            
+            return `
+                <div class="relative mb-20 ${isLeft ? 'md:w-1/2 md:pr-12' : 'md:w-1/2 md:ml-auto md:pl-12'}">
+                    <div class="group bg-slate-800/50 rounded-2xl p-6 border border-slate-700 hover:border-pink-500 transition-all hover:scale-105">
+                        <div class="station-marker absolute ${isLeft ? '-right-6 md:-right-14' : '-left-6 md:-left-14'} top-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-br ${colorGradient} rounded-full border-4 border-slate-900 z-10"></div>
+                        
+                        <h3 class="text-2xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r ${colorGradient}">${project.title}</h3>
+                        <p class="text-gray-300 mb-4">${project.description}</p>
+                        <div class="flex flex-wrap gap-2 mb-4">${techTags}</div>
+                        <a href="${project.link}" target="_blank" class="text-purple-400 hover:text-pink-400 transition-colors">View Project →</a>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ============================================
+        // 🚀 RENDER EVERYTHING ON PAGE LOAD
+        // ============================================
+        document.addEventListener('DOMContentLoaded', () => {
+            const educationContainer = document.getElementById('education-container');
+            const projectsContainer = document.getElementById('projects-container');
+            
+            // Render Education
+            educationData.forEach((edu, index) => {
+                educationContainer.innerHTML += generateEducationStation(edu, index);
+            });
+            
+            // Render Projects
+            projectsData.forEach((project, index) => {
+                projectsContainer.innerHTML += generateProjectStation(project, index);
+            });
+        });
+
+        // ============================================
+        // 📊 PROGRESS BAR
+        // ============================================
+        window.addEventListener('scroll', () => {
+            const total = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (window.scrollY / total) * 100;
+            document.getElementById('progress-bar').style.width = progress + '%';
+        });
+    </script>
+</body>
+</html>
